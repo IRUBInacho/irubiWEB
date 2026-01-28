@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonido Alta Fidelidad | Estudio Boutique de Producción Musical</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">IRUBI <span> by [Ignacio Rubí]</span></a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home" class="active">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#process">Proceso</a></li>
+                    <li><a href="#portfolio"><Portafolio></a></li>
+                    <li><a href="#contact" class="btn btn-secondary">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu visión musical, elevada a estándar profesional.</h1>
+                <p>Producción, mezcla y mastering boutique para artistas y productores que exigen claridad, impacto y una identidad sonora única. Aquí tu música no es un archivo, es un proyecto serio.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-large">🎧 Consulta tu proyecto</a>
+                    <a href="#portfolio" class="btn btn-secondary btn-large">Escuchar muestras</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>La persona detrás del sonido y las creaciones</h2>
+            <div class="about-container">
+                <div class="about-img">
+                    <!-- Imagen de productor/ingeniero -->
+                  <img src="imagenes/IMG_2353.JPG" alt="Productor musical IRUBI en estudio" class="about-photo">
+
+                </div>
+                <div class="about-text">
+                <h3>Hola, soy IRUBI</h3>
+                <p>Productor musical e ingeniero de mezcla y mastering. Ayudo a artistas a convertir ideas en canciones con sonido profesional, identidad propia y nivel competitivo. Mi filosofía es simple: cada tema tiene un ADN único, y mi trabajo es potenciarlo sin perder tu esencia.</p>
+
+                <p>He trabajado con proyectos que van desde el pop y el indie hasta el urbano y la electrónica, pero mi verdadera especialidad no es un género: es <strong>la calidad</strong>. Me obsesionan los detalles, la textura, el espacio y ese punto exacto donde la emoción se encuentra con la precisión técnica.</p>
+
+                <p>Este no es un estudio en modo producción en serie. Trabajo con un número limitado de proyectos para asegurar atención real, criterio artístico y un estándar sonoro alto en cada entrega. Tu música no es un archivo más: es un proyecto que trato con tiempo, oído crítico y compromiso total.</p>
+
+                <a href="#contact" class="btn">Trabajemos juntos</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Servicios boutique</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Ofrezco una experiencia completa de producción musical, desde la concepción de la idea hasta el master listo para distribución. Cada servicio se adapta a las necesidades específicas de tu proyecto.</p>
+            
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Producción Musical</h3>
+                    <p>Desarrollo de arreglos, composición de instrumentales, programación, grabación de instrumentos en vivo y dirección creativa. Transformamos tu idea en una canción completa con identidad sonora única.</p>
+                    <ul style="text-align: left; color: var(--text-secondary); margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">Producción desde cero o sobre tus ideas</li>
+                        <li style="margin-bottom: 10px;">Arreglos y orquestación</li>
+                        <li style="margin-bottom: 10px;">Composición de instrumentales</li>
+                        <li>Grabación de voces e instrumentos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Mezcla Profesional</h3>
+                    <p>Balance, equilibrio y claridad. Cada elemento encuentra su espacio en el espectro sonoro. Trabajo con técnicas analógicas y digitales para lograr mezclas con profundidad, calidez y definición.</p>
+                    <ul style="text-align: left; color: var(--text-secondary); margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">Balance y equilibrio de pistas</li>
+                        <li style="margin-bottom: 10px;">Procesamiento dinámico y efectos</li>
+                        <li style="margin-bottom: 10px;">Automation detallada</li>
+                        <li>Hasta 3 revisiones incluidas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <h3>Mastering Profesional</h3>
+                    <p>La etapa final que prepara tu música para el mundo. Optimización para todas las plataformas (Spotify, Apple Music, Vinilo, etc.), maximizando el impacto sonoro mientras se preserva la dinámica y la intención artística.</p>
+                    <ul style="text-align: left; color: var(--text-secondary); margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">Optimización para streaming</li>
+                        <li style="margin-bottom: 10px;">Corrección de frecuencias y dinámica</li>
+                        <li style="margin-bottom: 10px;">Secuenciación de álbumes</li>
+                        <li>Formatos para todas las plataformas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p><strong>Todos los servicios están disponibles de manera remota.</strong> Trabajamos juntos sin importar tu ubicación, mediante sesiones virtuales y flujos de trabajo optimizados para la colaboración online.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2>Proceso de trabajo</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">Cada proyecto sigue un método estructurado que garantiza resultados excepcionales mientras mantiene una comunicación clara y constante contigo.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consulta & Análisis</h3>
+                        <p>Nos reunimos (virtual o presencialmente) para discutir tu visión, referencias sonoras y objetivos. Analizo tu material y desarrollo un plan personalizado para tu proyecto.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Producción & Premezcla</h3>
+                        <p>Desarrollo los arreglos, grabo instrumentos adicionales si es necesario, y creo una premezcla para que escuches la dirección del proyecto. Tu feedback es esencial en esta etapa.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Mezcla Detallada</h3>
+                        <p>Trabajo cada pista con procesamiento dinámico, efectos espaciales y equilibrio tonal. Envío una primera versión para revisión y realizo ajustes basados en tus comentarios.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Mastering & Entrega</h3>
+                        <p>Una vez aprobada la mezcla, aplico el mastering final para optimizar el sonido en todas las plataformas. Te entrego los archivos listos para distribución y una guía de lanzamiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+ <section class="portfolio" id="portfolio">
+    <div class="container">
+        <h2>Portafolio</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Una selección de trabajos recientes que demuestran la versatilidad y calidad sonora que ofrezco en cada proyecto.</p>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="production">Producción</button>
+            <button class="filter-btn" data-filter="mixing">Mezcla</button>
+            <button class="filter-btn" data-filter="mastering">Mastering</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item" data-category="mastering">
+                <div class="portfolio-img-soulfia" style="background-image: url(imagenes/soulfia.png);"></div>
+                
+                <div class="portfolio-content">
+                    <h3>Soulfia - "Pedazos de mi"</h3>
+                    <p>Mastering profesional para la reconocida artista chilena Soulfia. Proyecto mezclado por Bastian Herrera y masterizado a través de stereo Mix.</p>
+                    <p><strong>Género:</strong> Latino Industria / Pop Alternativo</p>
+                    <p><a href="https://open.spotify.com/intl-es/track/01cNcGxFxAmGZbS6jYTlip?si=2b2996223e7d430a" style="color: var(--accent); text-decoration: none; font-weight: 600;">Abrir en Spotify</a></p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="mixing mastering">
+                <div class="portfolio-img-akatumamy" style="background-image: url(imagenes/akatumamy.png);"></div>
+               
+                <div class="portfolio-content">
+                    <h3>Akatumamy - "entre demonios"</h3>
+                    <p>Mezcla y Mastering profesional para Akatumamy, canción producida por Nass G.</p>
+                    <p><strong>Género:</strong> Electro Pop Alternativo / R&B Industrial</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="mastering">
+                <div class="portfolio-img-zumzumzum" style="background-image: url(imagenes/zumzumzum.png);"></div>
+                
+                <div class="portfolio-content">
+                    <h3>Nachosky ft Daira Heller - "Zum Zum Zum"</h3>
+                    <p>Mastering por Stems profesional. Canción producida por Pato Correa, reversionando a ranchera un hit brasileño. Impulsado por el sello NoTanFine.</p>
+                    <p><strong>Género:</strong> Ranchera Pop / Urbano Latino</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="production mastering mixing">
+                <div class="portfolio-img-arigato" style="background-image: url(imagenes/arigato.png);"></div>
+                
+                <div class="portfolio-content">
+                    <h3>Melanie Baby - "Arigato"</h3>
+                    <p>Producción, mezcla y mastering profesional para la artista Venezolana Melanie Baby.</p>
+                    <p><strong>Género:</strong> Urbano / Reggaeton</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="production mastering mixing">
+                <div class="portfolio-img-campuyjoaco" style="background-image: url(imagenes/campuyjoaco.png);"></div>
+              
+                <div class="portfolio-content">
+                    <h3>Campu y Joaco - "Lo que fuimos"</h3>
+                    <p>Producción, mezcla y mastering profesional para el duo chileno "Campu y Joaco".</p>
+                    <p><strong>Género:</strong> Cumbia / Latino</p>
+                </div>
+            </div> </div> <div style="text-align: center; margin-top: 50px;">
+            <p>¿Quieres escuchar más muestras de audio? <a href="#contact" style="color: var(--accent); text-decoration: none; font-weight: 600;">Contáctame para acceder a muestras completas</a> de cada proyecto.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+  <!--   <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Lo que dicen los artistas</h2> -->
+            
+            <!--
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        Trabajar con Alex fue un antes y un después para mi música. No solo tiene un oído técnico excepcional, sino que supo entender exactamente lo que quería transmitir. El mastering de mi álbum sonó consistente en todas las plataformas, con una claridad que nunca había logrado antes.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>María Solís</h4>
+                            <p>Artista independiente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
+<!--             <div class="testimonials-slider">
+                <div class="testimonial">Trabajar con Ignacio fue un antes y un después para mi música. No solo tiene un oído técnico excepcional, sino que supo entender exactamente lo que quería transmitir. El mastering de mi álbum sonó consistente en todas las plataformas, con una claridad que nunca había logrado antes. </div>
+                <div class="testimonial">...</div>
+                <div class="testimonial">...</div>
+                <div class="testimonial">...</div>
+                <div class="testimonial">...</div>
+            </div>
+
+
+
+            
+        </div> -->
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">Respuestas a las preguntas más comunes sobre cómo trabajo y qué puedes esperar cuando colaboramos.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo funciona el trabajo remoto?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Trabajamos mediante sesiones virtuales (Zoom, Google Meet) y comparto contigo los avances a través de una plataforma privada. Uso herramientas de colaboración en tiempo real para que puedas escuchar y comentar sobre el proyecto en cada etapa. El proceso es tan fluido como si estuvieras en el estudio.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué necesito para empezar un proyecto?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para producción: ideas, referencias musicales, melodías o letras. Para mezcla/mastering: las pistas de audio (stems) en buena calidad, preferiblemente en formato WAV a 24 bits y la tasa de muestreo original. Te enviaré una guía detallada con las especificaciones técnicas antes de comenzar.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo toma un proyecto?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Depende del servicio y complejidad. Una mezcla profesional típicamente toma 5-7 días laborables (incluyendo revisiones). Un proyecto de producción completo puede tomar de 2 a 4 semanas. Al inicio establecemos un cronograma realista que se adapte a tus necesidades.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Trabajas con todo tipo de géneros musicales?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, tengo experiencia en una amplia variedad de géneros: pop, rock, hip-hop, electrónica, folk, jazz y fusiones. Mi enfoque no está limitado por el género, sino por la búsqueda de la mejor versión de cada canción, respetando sus particularidades estilísticas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Por qué elegir trabajar conmigo?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mi enfoque es la esencia y autenticidad del artista. Siempre con la mirada puesta en lograr el mejor resultado posible, recibes una atención directa y completamente personalizada.
+
+Cada decisión técnica y creativa se toma en función de tu proyecto específico, no de un proceso estandarizado. Limito la cantidad de trabajos que acepto para asegurar que cada uno reciba el tiempo, el detalle y la dedicación que realmente merece.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2>Tu próximo proyecto merece sonar extraordinario</h2>
+            <p>No importa si es una sola canción o un álbum completo, si estás listo para llevar tu música al siguiente nivel, hablemos. Juntos podemos crear algo que no solo suene bien, sino que capture la esencia de tu arte.</p>
+            <a href="#contact" class="btn btn-large">🎶 Iniciar mi proyecto</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Hablemos de tu proyecto</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">Completa el formulario y me pondré en contacto contigo en menos de 24 horas para discutir los detalles de tu proyecto y cómo puedo ayudarte a lograr el sonido que buscas.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>irubimusic@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+569 86314114</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Trabajo remoto con clientes en todo el mundo. Estudio base: Santiago de Chile</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Horarios de contacto</h3>
+                            <p>Lunes a Viernes: 09:00 - 18:00 (GMT-5)<br>Sesión inicial los fines de semana disponible bajo cita.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Servicio de interés *</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="production">Producción Musical</option>
+                                <option value="mixing">Mezcla Profesional</option>
+                                <option value="mastering">Mastering Profesional</option>
+                                <option value="full">Paquete Completo</option>
+                                <option value="consultation">Consulta Inicial</option>
+                            </select>
+                        </div>
+
+                           <div class="form-group">
+                            <label for="link">Link de muestra de tu proyecto</label>
+                            <input type="url" id="link" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Cuéntame sobre tu proyecto *</label>
+                            <textarea id="message" class="form-control" required placeholder="Género, referencias musicales, estado actual del proyecto, objetivos..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Enviar consulta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">IRUBI <span>by [Ignacio Rubi]</span></a>
+                    <p>Producción, mezcla y mastering. Transformando visiones musicales en sonidos competitivos con un enfoque personalizado y dedicado a la excelencia.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#process">Proceso</a></li>
+                        <li><a href="#portfolio">Portafolio</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Conecta</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/irubimusic_/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a> -->
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a> -->
+                        <a href="https://www.linkedin.com/in/ignacio-rubi" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p style="margin-top: 20px; color: var(--text-muted);">Sigue mi trabajo y conoce proyectos recientes.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 IRUBI. Todos los derechos reservados. | Diseñado para artistas que buscan excelencia sonora.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        // Portfolio Filter
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`¡Gracias ${name}! Tu consulta sobre ${service} ha sido enviada. Me pondré en contacto contigo en menos de 24 horas.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+        <!--  SCRIPT DE FILTRO para seccion de protafolio-->
+    <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".portfolio-item");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        items.forEach(item => {
+          const categories = item.dataset.category.split(" ");
+
+          if (filter === "all" || categories.includes(filter)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+    </script>
+</body>
+
+
+</body>
+</html>
