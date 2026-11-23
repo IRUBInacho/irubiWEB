@@ -207,6 +207,12 @@ section {
     width: 100%;
 }
 
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* Header & Navigation */
 header {
     position: fixed;
@@ -580,6 +586,10 @@ nav a.btn {
     background-position: center;
 }
 
+.portfolio-img-inseguro {
+    background-position: center 26%;
+}
+
 .portfolio-content {
     padding: 25px;
     display: flex;
@@ -843,6 +853,32 @@ select.form-control option {
 textarea.form-control {
     min-height: 140px;
     resize: vertical;
+}
+
+.form-honeypot {
+    display: none;
+}
+
+.form-status {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: var(--border-radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border: 1px solid transparent;
+}
+
+.form-status--success {
+    background: rgba(0, 212, 170, 0.12);
+    border-color: rgba(0, 212, 170, 0.45);
+    color: var(--success);
+}
+
+.form-status--error {
+    background: rgba(255, 92, 114, 0.12);
+    border-color: rgba(255, 92, 114, 0.45);
+    color: #FF8A9A;
 }
 
 /* Footer */

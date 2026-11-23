@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css?v=3">
+    <link rel="stylesheet" href="estilo.css?v=4">
     <link rel="icon" type="image/png" href="imagenes/IRUBIBLACK.png">
 </head>
 
@@ -368,6 +368,22 @@
                                 class="portfolio-link">Abrir en Spotify</a></p>
                     </div>
                 </div>
+
+                <div class="portfolio-item" data-category="mixing mastering">
+                    <div class="portfolio-img portfolio-img-inseguro"
+                        style="background-image: url(imagenes/inseguro.jpg);" role="img"
+                        aria-label="Portada de Nass G feat Vlntna B - Inseguro"></div>
+
+                    <div class="portfolio-content">
+                        <h3>Nass G feat Vlntna&nbsp;B - "Inseguro"</h3>
+                        <p>Mezcla y masterización para el álbum de Nass G "Duele más cada vez que duele menos".</p>
+                        <p class="portfolio-genre"><strong>Género:</strong> Bolero-Pop</p>
+                        <p class="portfolio-action"><a
+                                href="https://open.spotify.com/intl-es/track/5JI9HBLRSM9THHCuplWh8H?si=5264ffdc037b49eb"
+                                target="_blank" rel="noopener noreferrer" class="portfolio-link">Abrir en Spotify</a>
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="section-note">
@@ -529,7 +545,11 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xdegpwwz" method="POST">
+                        <input type="hidden" name="_subject" value="Nueva consulta de proyecto — Web IRUBI">
+                        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off"
+                            aria-hidden="true">
+
                         <div class="form-group">
                             <label for="name">Nombre completo *</label>
                             <input type="text" id="name" name="name" class="form-control" autocomplete="name" required>
@@ -545,11 +565,11 @@
                             <label for="service">Servicio de interés *</label>
                             <select id="service" name="service" class="form-control" required>
                                 <option value="">Selecciona una opción</option>
-                                <option value="production">Producción Musical</option>
-                                <option value="mixing">Mezcla Profesional</option>
-                                <option value="mastering">Mastering Profesional</option>
-                                <option value="full">Paquete Completo</option>
-                                <option value="consultation">Consulta Inicial</option>
+                                <option value="Producción Musical">Producción Musical</option>
+                                <option value="Mezcla Profesional">Mezcla Profesional</option>
+                                <option value="Mastering Profesional">Mastering Profesional</option>
+                                <option value="Paquete Completo">Paquete Completo</option>
+                                <option value="Consulta Inicial">Consulta Inicial</option>
                             </select>
                         </div>
 
@@ -565,7 +585,8 @@
                                 placeholder="Género, referencias musicales, estado actual del proyecto, objetivos…"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-submit">Enviar consulta</button>
+                        <button type="submit" class="btn btn-submit" id="submitBtn">Enviar consulta</button>
+                        <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
                     </form>
                 </div>
             </div>
@@ -703,18 +724,57 @@
             });
         });
 
-        // Contact Form Submission
+        // Contact Form Submission (Formspree)
         const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
 
-        contactForm.addEventListener('submit', (e) => {
+        function showFormStatus(type, text) {
+            formStatus.textContent = text;
+            formStatus.className = `form-status form-status--${type}`;
+            formStatus.hidden = false;
+        }
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('name').value;
+            const endpoint = contactForm.getAttribute('action') || '';
+            if (!endpoint || endpoint.includes('REEMPLAZAR_CON_TU_ID')) {
+                showFormStatus('error', 'El formulario aún no está conectado a un ID de Formspree. Configura tu endpoint o escríbeme directo a irubimusic@gmail.com.');
+                return;
+            }
+
+            const name = document.getElementById('name').value.trim();
             const service = document.getElementById('service').value;
+            const originalLabel = submitBtn.textContent;
 
-            alert(`¡Gracias ${name}! Tu consulta sobre ${service} ha sido enviada. Me pondré en contacto contigo en menos de 24 horas.`);
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando…';
+            formStatus.hidden = true;
 
-            contactForm.reset();
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showFormStatus('success', `¡Gracias ${name}! Tu consulta sobre ${service} ha sido enviada. Me pondré en contacto contigo en menos de 24 horas.`);
+                    contactForm.reset();
+                } else {
+                    const data = await response.json().catch(() => null);
+                    const errorDetail = data?.errors?.map(err => err.message).join(', ');
+                    showFormStatus('error', errorDetail || 'No se pudo enviar tu consulta. Intenta nuevamente o escríbeme a irubimusic@gmail.com.');
+                }
+            } catch {
+                showFormStatus('error', 'Error de conexión al enviar el formulario. Revisa tu internet o escríbeme directo a irubimusic@gmail.com.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
+            }
         });
 
         // Smooth scrolling for anchor links with dynamic header offset
