@@ -443,6 +443,14 @@
         }
         
 
+        /* Regla general para todas las imágenes del portafolio */
+        [class*="portfolio-img-"] {
+            height: 200px;
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }
+
         .portfolio-img-arigato {
             height: 200px;
             background-size: cover;      /* llena todo el espacio */
@@ -476,6 +484,34 @@
                 background-size: cover;      /* llena todo el espacio */
                 background-position: center ; /* centra lo importante */
                 background-repeat: no-repeat;
+        }   
+
+        .portfolio-img-mercybleu {
+            height: 200px;
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-nicconea {
+            height: 200px;
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-kiddbrevis {
+            height: 200px;
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }   
+
+        .portfolio-img-milugarfavorito {
+            height: 200px;
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
         }   
 
 
