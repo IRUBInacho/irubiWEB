@@ -266,10 +266,10 @@
                 stagger: 0.09
             }, '-=0.55')
             .from(heroVisualFrame, {
-                clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
-                duration: 1.25,
-                ease: 'expo.inOut'
-            }, '-=1.0')
+                opacity: 0,
+                duration: 1.4,
+                ease: 'power2.out'
+            }, 0)
             .from('.hero__bottom-deck > *', {
                 opacity: 0,
                 y: 26,
@@ -385,34 +385,22 @@
             });
         }
 
-        // E. Services Sticky Monitor Scene Switcher
-        const serviceChapters = Array.from(document.querySelectorAll('.service-chapter'));
-        const serviceSlides = Array.from(document.querySelectorAll('.services__slide'));
-        const serviceCounter = document.getElementById('serviceCounter');
-        const serviceModeTag = document.getElementById('serviceModeTag');
-        const serviceMeterFill = document.getElementById('serviceMeterFill');
-
-        const activateService = (index) => {
-            serviceChapters.forEach((ch, i) => ch.classList.toggle('is-active', i === index));
-            serviceSlides.forEach((sl, i) => sl.classList.toggle('is-active', i <= index));
-            if (serviceCounter) serviceCounter.textContent = `0${index + 1} / 0${serviceChapters.length}`;
-            if (serviceModeTag && serviceChapters[index]) {
-                serviceModeTag.textContent = serviceChapters[index].dataset.mode || '';
-            }
-            if (serviceMeterFill) {
-                serviceMeterFill.style.transform = `scaleX(${((index + 1) / serviceChapters.length).toFixed(3)})`;
-            }
-        };
-
-        serviceChapters.forEach((chapter, index) => {
-            ScrollTrigger.create({
-                trigger: chapter,
-                start: 'top 58%',
-                end: 'bottom 58%',
-                onEnter: () => activateService(index),
-                onEnterBack: () => activateService(index)
+        // E. Services Card Grid Stagger Reveal
+        const serviceCards = document.querySelectorAll('.service-chapter');
+        if (serviceCards.length) {
+            gsap.from(serviceCards, {
+                opacity: 0,
+                y: 36,
+                duration: 0.85,
+                stagger: 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.services__chapters',
+                    start: 'top 84%',
+                    once: true
+                }
             });
-        });
+        }
 
         // F. Process Section: Desktop Horizontal Pinned Scroll vs Mobile Vertical Stagger
         const mm = gsap.matchMedia();
