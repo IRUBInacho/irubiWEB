@@ -2156,6 +2156,17 @@ textarea.form-control {
         justify-content: flex-start;
     }
 
+    /* Marquee: Slimmer Ribbon on Tablet & Mobile */
+    .marquee-row {
+        padding-block: 8px;
+    }
+
+    .marquee-track {
+        font-size: 0.88rem;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
     /* About Stack */
     .about__editorial-grid {
         grid-template-columns: 1fr;
@@ -2500,9 +2511,27 @@ textarea.form-control {
         padding: 13px 22px;
     }
 
-    /* Marquee: Tighter Vertical Band */
+    /* Marquee: Slimmer Ribbon & More Visible Copy on Mobile */
+    .marquee-band__controls {
+        padding: 5px var(--gutter);
+        font-size: 0.62rem;
+    }
+
+    .marquee-pause-btn {
+        font-size: 0.6rem;
+        padding: 3px 9px;
+        min-height: 26px;
+    }
+
     .marquee-row {
-        padding-block: 10px;
+        padding-block: 6px;
+    }
+
+    .marquee-track {
+        font-size: 0.76rem;
+        gap: 16px;
+        padding-right: 16px;
+        letter-spacing: 0.01em;
     }
 
     /* About: Compact Spacing & Progressive Bio Disclosure */
