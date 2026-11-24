@@ -414,8 +414,10 @@
 
             if (!processTrack || !processPinWrap) return;
 
+            const processViewport = processTrack.parentElement;
             const getScrollAmount = () => {
-                return Math.max(0, processTrack.scrollWidth - window.innerWidth + 48);
+                const padLeft = processViewport ? (parseFloat(getComputedStyle(processViewport).paddingLeft) || 0) : 0;
+                return Math.max(0, padLeft + processTrack.scrollWidth - window.innerWidth);
             };
 
             gsap.to(processTrack, {
@@ -423,14 +425,13 @@
                 ease: 'none',
                 scrollTrigger: {
                     trigger: processPinWrap,
-                    start: 'top top',
-                    end: () => `+=${getScrollAmount() + 320}`,
-                    pin: true,
+                    start: 'top 85%',
+                    end: 'bottom 25%',
                     scrub: 0.6,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
                         if (processProgressFill) {
-                            const p = 0.25 + self.progress * 0.75;
+                            const p = getScrollAmount() <= 0 ? 1 : 0.25 + self.progress * 0.75;
                             processProgressFill.style.transform = `scaleX(${p.toFixed(4)})`;
                         }
                     }
