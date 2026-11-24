@@ -56,18 +56,6 @@
     --header-h: 78px;
 }
 
-@property --fade-start {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-}
-
-@property --fade-end {
-    syntax: "<length>";
-    inherits: false;
-    initial-value: 0px;
-}
-
 *,
 *::before,
 *::after {
@@ -2041,18 +2029,6 @@ textarea.form-control {
     display: none;
 }
 
-@keyframes reveal-fade-start {
-    to {
-        --fade-start: var(--fade-size);
-    }
-}
-
-@keyframes hide-fade-end {
-    from {
-        --fade-end: var(--fade-size);
-    }
-}
-
 /* ==========================================================================
    RESPONSIVE CHOREOGRAPHY — TABLET & MOBILE (<= 1080px / <= 960px / <= 640px)
    ========================================================================== */
@@ -2313,6 +2289,7 @@ textarea.form-control {
         padding-inline: var(--track-gutter-start) var(--track-gutter-end);
         padding-block: 4px 10px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-padding-inline: var(--track-gutter-start) var(--track-gutter-end);
         overscroll-behavior-x: contain;
@@ -2364,6 +2341,7 @@ textarea.form-control {
         padding-inline: var(--track-gutter-start) var(--track-gutter-end);
         padding-block: 4px 10px;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-padding-inline: var(--track-gutter-start) var(--track-gutter-end);
         overscroll-behavior-x: contain;
@@ -2382,27 +2360,6 @@ textarea.form-control {
         width: min(84vw, 390px);
         min-height: 270px;
         scroll-snap-align: start;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        .services__chapters,
-        .process__track {
-            scroll-behavior: smooth;
-        }
-    }
-
-    @supports (animation-timeline: scroll()) and (mask-clip: no-clip) {
-        .services__chapters,
-        .process__track {
-            --fade-size: var(--gutter);
-            mask:
-                linear-gradient(black, black) no-clip subtract,
-                linear-gradient(to right, black, transparent) 0 0 / var(--fade-start) 100% no-repeat no-clip,
-                linear-gradient(to right, transparent, black) 100% 0 / var(--fade-end) 100% no-repeat no-clip;
-            animation: reveal-fade-start linear both, hide-fade-end linear both;
-            animation-timeline: scroll(self inline);
-            animation-range: 0 var(--fade-size), calc(100% - var(--fade-size)) 100%;
-        }
     }
 
     /* Portfolio, FAQ, Contact, Footer */

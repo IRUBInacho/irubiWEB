@@ -8,15 +8,17 @@
 
     if (hasGSAP) {
         gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
     }
 
     // ----------------------------------------------------------------------
-    // 1. Lenis Smooth Scroll + Scroll Velocity Bridge
+    // 1. Lenis Smooth Scroll (Fine-Pointer Desktop Only) + Scroll Velocity Bridge
     // ----------------------------------------------------------------------
     let lenis = null;
     let scrollVelocity = 0;
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    if (!prefersReducedMotion && typeof window.Lenis !== 'undefined') {
+    if (!prefersReducedMotion && isFinePointer && typeof window.Lenis !== 'undefined') {
         lenis = new Lenis({
             duration: 1.12,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -770,18 +772,27 @@
             return parseFloat(style.paddingLeft) || 0;
         };
 
-        const getTargetScrollLeft = (index) => {
-            const slide = slides[index];
-            if (!slide) return 0;
+        const getSlideSnapPositions = () => {
             const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
             const trackRect = track.getBoundingClientRect();
-            const slideRect = slide.getBoundingClientRect();
-            const rawLeft = track.scrollLeft + (slideRect.left - trackRect.left) - getTrackPaddingStart();
-            return Math.min(maxScroll, Math.max(0, rawLeft));
+            const padStart = getTrackPaddingStart();
+            const base = track.scrollLeft - trackRect.left - padStart;
+            return {
+                maxScroll,
+                positions: slides.map((slide) => {
+                    const rawLeft = base + slide.getBoundingClientRect().left;
+                    return Math.min(maxScroll, Math.max(0, rawLeft));
+                })
+            };
+        };
+
+        const getTargetScrollLeft = (index) => {
+            const { positions } = getSlideSnapPositions();
+            return positions[index] ?? 0;
         };
 
         const getNearestSlideIndex = () => {
-            const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+            const { maxScroll, positions } = getSlideSnapPositions();
             if (maxScroll <= 1) return 0;
             if (track.scrollLeft >= maxScroll - 4) return slides.length - 1;
 
@@ -789,8 +800,8 @@
             let bestIndex = 0;
             let bestDist = Infinity;
 
-            for (let i = 0; i < slides.length; i += 1) {
-                const dist = Math.abs(getTargetScrollLeft(i) - currentLeft);
+            for (let i = 0; i < positions.length; i += 1) {
+                const dist = Math.abs(positions[i] - currentLeft);
                 if (dist < bestDist) {
                     bestDist = dist;
                     bestIndex = i;
@@ -968,10 +979,19 @@
 
         syncMode(mobileCarouselMQ.matches);
         mobileCarouselMQ.addEventListener('change', (e) => syncMode(e.matches));
+
+        let lastViewportWidth = window.innerWidth;
+        let resizeTimer = null;
         window.addEventListener('resize', () => {
             if (!mobileCarouselMQ.matches) return;
-            syncProcessBar();
-            updateButtons(getNearestSlideIndex());
+            // Ignore vertical-only URL bar resizes on mobile scroll
+            if (window.innerWidth === lastViewportWidth) return;
+            lastViewportWidth = window.innerWidth;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                syncProcessBar();
+                updateButtons(getNearestSlideIndex());
+            }, 150);
         });
     });
 })();
