@@ -424,10 +424,10 @@
                 x: () => -getScrollAmount(),
                 ease: 'none',
                 scrollTrigger: {
-                    trigger: processPinWrap,
+                    trigger: processViewport || processPinWrap,
                     start: 'top 85%',
-                    end: 'bottom 25%',
-                    scrub: 0.6,
+                    end: 'bottom 20%',
+                    scrub: true,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
                         if (processProgressFill) {
