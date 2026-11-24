@@ -56,6 +56,18 @@
     --header-h: 78px;
 }
 
+@property --fade-start {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0px;
+}
+
+@property --fade-end {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0px;
+}
+
 *,
 *::before,
 *::after {
@@ -2023,6 +2035,24 @@ textarea.form-control {
     color: var(--ink-dim);
 }
 
+/* Mobile-only horizontal carousel controls (hidden on desktop) */
+.mobile-carousel-head,
+.mobile-carousel-markers {
+    display: none;
+}
+
+@keyframes reveal-fade-start {
+    to {
+        --fade-start: var(--fade-size);
+    }
+}
+
+@keyframes hide-fade-end {
+    from {
+        --fade-end: var(--fade-size);
+    }
+}
+
 /* ==========================================================================
    RESPONSIVE CHOREOGRAPHY — TABLET & MOBILE (<= 1080px / <= 960px / <= 640px)
    ========================================================================== */
@@ -2145,19 +2175,174 @@ textarea.form-control {
         position: static;
     }
 
-    /* Services Stack */
+    /* Mobile Horizontal Carousel Controls (Services & Process) */
+    .mobile-carousel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .mobile-carousel-head--process {
+        margin-top: 18px;
+        margin-bottom: 0;
+    }
+
+    .mobile-carousel-hint {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        color: var(--ink-muted);
+    }
+
+    .mobile-carousel-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mobile-carousel-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0;
+        background: rgba(246, 245, 242, 0.06);
+        border: 1px solid rgba(246, 245, 242, 0.42);
+        color: var(--ink-light);
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        line-height: 1;
+        cursor: pointer;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        transition:
+            transform 0.12s var(--ease-expo),
+            border-color 0.2s var(--ease-expo),
+            background-color 0.2s var(--ease-expo),
+            color 0.2s var(--ease-expo),
+            opacity 0.2s var(--ease-expo);
+    }
+
+    .mobile-carousel-btn:active:not(:disabled) {
+        transform: scale(0.94);
+        border-color: var(--volt);
+        color: var(--volt);
+    }
+
+    .mobile-carousel-btn:disabled {
+        opacity: 0.34;
+        cursor: not-allowed;
+    }
+
+    .mobile-carousel-markers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 14px;
+    }
+
+    .mobile-carousel-dot {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 28px;
+        min-height: 28px;
+        padding: 12px 4px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    .mobile-carousel-dot::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 4px;
+        background: rgba(246, 245, 242, 0.5);
+        transition:
+            width 0.25s var(--ease-expo),
+            background-color 0.25s var(--ease-expo);
+    }
+
+    .mobile-carousel-dot[aria-current="true"]::before {
+        width: 28px;
+        background: var(--volt);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .mobile-carousel-btn:hover:not(:disabled) {
+            border-color: var(--volt);
+            color: var(--volt);
+            background: rgba(216, 255, 56, 0.08);
+        }
+
+        .mobile-carousel-dot:hover::before {
+            background: var(--ink-light);
+        }
+
+        .mobile-carousel-dot[aria-current="true"]:hover::before {
+            background: var(--volt);
+        }
+    }
+
+    /* Services Horizontal Scroll Track on Mobile & Tablet */
     .services__header-split {
         grid-template-columns: 1fr;
+        margin-bottom: 32px;
     }
 
     .services__chapters {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        --track-gutter-start: max(var(--gutter), env(safe-area-inset-left));
+        --track-gutter-end: max(var(--gutter), env(safe-area-inset-right));
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 16px;
+        margin-inline: calc(var(--track-gutter-start) * -1) calc(var(--track-gutter-end) * -1);
+        padding-inline: var(--track-gutter-start) var(--track-gutter-end);
+        padding-block: 4px 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--track-gutter-start) var(--track-gutter-end);
+        overscroll-behavior-x: contain;
+        touch-action: manipulation;
+        scrollbar-width: none;
     }
 
-    /* Process Mobile Vertical Agile Flow */
+    .services__chapters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-chapter {
+        flex: 0 0 min(84vw, 390px);
+        width: min(84vw, 390px);
+        scroll-snap-align: start;
+    }
+
+    .service-chapter:last-child {
+        grid-column: auto;
+    }
+
+    .remote-banner {
+        margin-top: 28px;
+    }
+
+    /* Process Horizontal Scroll Track on Mobile & Tablet */
     .process__pin-wrap {
         min-height: 0;
+        padding-block: 68px;
+        gap: 20px;
     }
 
     .process__heading-row {
@@ -2165,18 +2350,59 @@ textarea.form-control {
     }
 
     .process__viewport {
-        padding-inline: var(--gutter);
+        padding-inline: 0;
     }
 
     .process__track {
-        flex-direction: column;
+        --track-gutter-start: max(var(--gutter), env(safe-area-inset-left));
+        --track-gutter-end: max(var(--gutter), env(safe-area-inset-right));
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 16px;
         width: 100%;
-        padding-right: 0;
+        padding-inline: var(--track-gutter-start) var(--track-gutter-end);
+        padding-block: 4px 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--track-gutter-start) var(--track-gutter-end);
+        overscroll-behavior-x: contain;
+        touch-action: manipulation;
+        will-change: auto;
+        transform: none;
+        scrollbar-width: none;
+    }
+
+    .process__track::-webkit-scrollbar {
+        display: none;
     }
 
     .process-card {
-        width: 100%;
-        min-height: 0;
+        flex: 0 0 min(84vw, 390px);
+        width: min(84vw, 390px);
+        min-height: 270px;
+        scroll-snap-align: start;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .services__chapters,
+        .process__track {
+            scroll-behavior: smooth;
+        }
+    }
+
+    @supports (animation-timeline: scroll()) and (mask-clip: no-clip) {
+        .services__chapters,
+        .process__track {
+            --fade-size: var(--gutter);
+            mask:
+                linear-gradient(black, black) no-clip subtract,
+                linear-gradient(to right, black, transparent) 0 0 / var(--fade-start) 100% no-repeat no-clip,
+                linear-gradient(to right, transparent, black) 100% 0 / var(--fade-end) 100% no-repeat no-clip;
+            animation: reveal-fade-start linear both, hide-fade-end linear both;
+            animation-timeline: scroll(self inline);
+            animation-range: 0 var(--fade-size), calc(100% - var(--fade-size)) 100%;
+        }
     }
 
     /* Portfolio, FAQ, Contact, Footer */
@@ -2231,6 +2457,11 @@ textarea.form-control {
     .remote-banner {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .process-card {
+        padding: 28px 24px;
+        min-height: 255px;
     }
 
     .portfolio-filter {

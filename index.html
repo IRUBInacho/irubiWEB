@@ -36,7 +36,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css?v=8">
+    <link rel="stylesheet" href="estilo.css?v=9">
     <link rel="icon" type="image/png" href="imagenes/IRUBIBLACK.png">
 
     <!-- Structured Data (JSON-LD) -->
@@ -408,10 +408,26 @@
                     </p>
                 </div>
 
-                <div class="services__grid">
-                    <div class="services__chapters">
+                <div class="services__grid" data-mobile-carousel="services"
+                    data-carousel-label="Servicios de producción musical, mezcla y mastering">
+                    <div class="mobile-carousel-head">
+                        <span class="mobile-carousel-hint" aria-hidden="true">DESLIZA →</span>
+                        <div class="mobile-carousel-controls">
+                            <button type="button" class="mobile-carousel-btn" data-direction="previous"
+                                aria-label="Servicio anterior">
+                                <span aria-hidden="true">←</span>
+                            </button>
+                            <button type="button" class="mobile-carousel-btn" data-direction="next"
+                                aria-label="Siguiente servicio">
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="services__chapters" id="servicesTrack" data-carousel-track>
                         <article class="service-chapter" data-service-step="0" data-service-num="01"
-                            data-mode="CH.01 — DIRECCIÓN &amp; ARREGLOS">
+                            data-mode="CH.01 — DIRECCIÓN &amp; ARREGLOS" data-slide-label="1 de 3"
+                            data-marker-name="Ir al servicio 1: Producción Musical">
                             <div class="service-chapter__head">
                                 <span class="service-chapter__idx">01</span>
                                 <span class="service-chapter__tag">CREACIÓN &amp; IDENTIDAD</span>
@@ -429,7 +445,8 @@
                         </article>
 
                         <article class="service-chapter" data-service-step="1" data-service-num="02"
-                            data-mode="CH.02 — BALANCE HÍBRIDO &amp; ESPACIO">
+                            data-mode="CH.02 — BALANCE HÍBRIDO &amp; ESPACIO" data-slide-label="2 de 3"
+                            data-marker-name="Ir al servicio 2: Mezcla Profesional">
                             <div class="service-chapter__head">
                                 <span class="service-chapter__idx">02</span>
                                 <span class="service-chapter__tag">PROFUNDIDAD &amp; DEFINICIÓN</span>
@@ -447,7 +464,8 @@
                         </article>
 
                         <article class="service-chapter" data-service-step="2" data-service-num="03"
-                            data-mode="CH.03 — IMPACTO &amp; DISTRIBUCIÓN GLOBAL">
+                            data-mode="CH.03 — IMPACTO &amp; DISTRIBUCIÓN GLOBAL" data-slide-label="3 de 3"
+                            data-marker-name="Ir al servicio 3: Mastering Profesional">
                             <div class="service-chapter__head">
                                 <span class="service-chapter__idx">03</span>
                                 <span class="service-chapter__tag">TRADUCCIÓN &amp; POTENCIA</span>
@@ -464,6 +482,9 @@
                             </ul>
                         </article>
                     </div>
+
+                    <p class="visually-hidden" role="status" aria-live="polite" data-carousel-status></p>
+                    <nav class="mobile-carousel-markers" aria-label="Seleccionar servicio" data-carousel-markers></nav>
                 </div>
 
                 <div class="remote-banner" data-reveal-up>
@@ -478,7 +499,8 @@
              03 // PROCESS — SCROLL-DRIVEN HORIZONTAL SIGNAL CHAIN
              ================================================================== -->
         <section class="process theme-indigo" id="process">
-            <div class="process__pin-wrap" id="processPinWrap">
+            <div class="process__pin-wrap" id="processPinWrap" data-mobile-carousel="process"
+                data-carousel-label="Proceso de trabajo en 4 etapas">
                 <div class="container process__top">
                     <div class="section-kicker">
                         <span class="section-kicker__num">[ 03 // PROCESO DE TRABAJO ]</span>
@@ -501,11 +523,26 @@
                     <div class="process__progress-rail" aria-hidden="true">
                         <div class="process__progress-fill" id="processProgressFill"></div>
                     </div>
+
+                    <div class="mobile-carousel-head mobile-carousel-head--process">
+                        <span class="mobile-carousel-hint" aria-hidden="true">DESLIZA →</span>
+                        <div class="mobile-carousel-controls">
+                            <button type="button" class="mobile-carousel-btn" data-direction="previous"
+                                aria-label="Etapa anterior">
+                                <span aria-hidden="true">←</span>
+                            </button>
+                            <button type="button" class="mobile-carousel-btn" data-direction="next"
+                                aria-label="Siguiente etapa">
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="process__viewport">
-                    <ol class="process__track" id="processTrack">
-                        <li class="process-card">
+                    <ol class="process__track" id="processTrack" data-carousel-track>
+                        <li class="process-card" data-slide-label="1 de 4"
+                            data-marker-name="Ir a la etapa 1: Consulta y Análisis">
                             <div class="process-card__top">
                                 <span class="process-card__step">STEP // 01</span>
                                 <span class="process-card__phase">DIAGNÓSTICO</span>
@@ -516,7 +553,8 @@
                             <span class="process-card__ghost" aria-hidden="true">01</span>
                         </li>
 
-                        <li class="process-card">
+                        <li class="process-card" data-slide-label="2 de 4"
+                            data-marker-name="Ir a la etapa 2: Producción y Premezcla">
                             <div class="process-card__top">
                                 <span class="process-card__step">STEP // 02</span>
                                 <span class="process-card__phase">ARQUITECTURA</span>
@@ -528,7 +566,8 @@
                             <span class="process-card__ghost" aria-hidden="true">02</span>
                         </li>
 
-                        <li class="process-card">
+                        <li class="process-card" data-slide-label="3 de 4"
+                            data-marker-name="Ir a la etapa 3: Mezcla Detallada">
                             <div class="process-card__top">
                                 <span class="process-card__step">STEP // 03</span>
                                 <span class="process-card__phase">ESCULTURA SONORA</span>
@@ -540,7 +579,8 @@
                             <span class="process-card__ghost" aria-hidden="true">03</span>
                         </li>
 
-                        <li class="process-card">
+                        <li class="process-card" data-slide-label="4 de 4"
+                            data-marker-name="Ir a la etapa 4: Mastering y Entrega">
                             <div class="process-card__top">
                                 <span class="process-card__step">STEP // 04</span>
                                 <span class="process-card__phase">LANZAMIENTO</span>
@@ -552,6 +592,12 @@
                             <span class="process-card__ghost" aria-hidden="true">04</span>
                         </li>
                     </ol>
+
+                    <p class="visually-hidden" role="status" aria-live="polite" data-carousel-status></p>
+                    <div class="container">
+                        <nav class="mobile-carousel-markers" aria-label="Seleccionar etapa del proceso"
+                            data-carousel-markers></nav>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1248,7 +1294,7 @@
     <script defer src="vendor/lenis.min.js"></script>
     <script defer src="vendor/gsap.min.js"></script>
     <script defer src="vendor/ScrollTrigger.min.js"></script>
-    <script defer src="app.js?v=8"></script>
+    <script defer src="app.js?v=9"></script>
 </body>
 
 </html>
