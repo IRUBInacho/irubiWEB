@@ -637,6 +637,7 @@ section {
    00 // HERO — ASYMMETRIC EDITORIAL MONOLITH
    ========================================================================== */
 .hero {
+    isolation: isolate;
     min-height: 100svh;
     padding-top: calc(var(--header-h) + clamp(28px, 4vw, 52px));
     padding-bottom: clamp(48px, 6vw, 84px);
@@ -711,7 +712,7 @@ section {
 .hero__bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: -1;
     overflow: hidden;
     background: #16161a;
 }
@@ -728,9 +729,7 @@ section {
     display: block;
     object-fit: cover;
     object-position: center 35%;
-    filter: grayscale(1) contrast(1.08) brightness(0.62);
     transform: scale(1.08);
-    will-change: transform;
 }
 
 .hero__bg-overlay {
@@ -754,6 +753,7 @@ section {
 .hero__lead {
     font-size: clamp(1.02rem, 1.25vw, 1.22rem);
     color: #C4C4D0;
+    text-shadow: 0 2px 18px rgba(7, 7, 11, 0.85);
     max-width: 56ch;
 }
 
@@ -2211,7 +2211,7 @@ textarea.form-control {
     }
 
     .hero__title {
-        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        font-size: clamp(1.8rem, 7.6vw, 3.4rem);
     }
 
     .hero__actions {
