@@ -53,8 +53,9 @@
     let lastScrollY = window.scrollY;
 
     const updateScrollChrome = () => {
-        const y = window.scrollY;
         const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        // Clamp scrollY so iOS rubber-band overscroll never flips header visibility
+        const y = Math.max(0, Math.min(window.scrollY, maxScroll));
         const progress = Math.min(1, Math.max(0, y / maxScroll));
 
         if (progressBar) {
@@ -479,6 +480,7 @@
             duration: 0.85,
             stagger: 0.07,
             ease: 'power3.out',
+            clearProps: 'transform,opacity',
             scrollTrigger: {
                 trigger: '.portfolio-grid',
                 start: 'top 84%',
@@ -518,12 +520,20 @@
     }
 
     // ----------------------------------------------------------------------
-    // 7. Portfolio Filter with Kinetic Re-entry & Live Status Counter
+    // 7. Portfolio Filter + Mobile Progressive Disclosure (<= 640px)
     // ----------------------------------------------------------------------
+    const compactMobileMQ = window.matchMedia('(max-width: 640px)');
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioGrid = document.getElementById('portfolioGrid');
     const releaseCards = Array.from(document.querySelectorAll('.release-card'));
     const portfolioStatus = document.getElementById('portfolioStatus');
+    const portfolioMoreWrap = document.getElementById('portfolioMoreWrap');
+    const portfolioMoreBtn = document.getElementById('portfolioMoreBtn');
+    const portfolioMoreText = document.getElementById('portfolioMoreText');
+    const MOBILE_PORTFOLIO_LIMIT = 4;
+    let currentFilter = 'all';
+    let portfolioExpanded = false;
+
     const filterLabels = {
         all: 'PROYECTOS',
         production: 'PROYECTOS DE PRODUCCIÓN',
@@ -531,9 +541,63 @@
         mastering: 'PROYECTOS DE MASTERING'
     };
 
+    const renderPortfolio = (animateCards = false, onlyAnimateFrom = 0) => {
+        const isCompactAll = compactMobileMQ.matches && currentFilter === 'all';
+        portfolioGrid?.classList.toggle('is-filtered', currentFilter !== 'all');
+
+        const matched = [];
+        releaseCards.forEach((card) => {
+            const cats = (card.dataset.category || '').split(' ');
+            const matches = currentFilter === 'all' || cats.includes(currentFilter);
+            if (matches) matched.push(card);
+            else card.hidden = true;
+        });
+
+        const visibleLimit = isCompactAll && !portfolioExpanded ? MOBILE_PORTFOLIO_LIMIT : matched.length;
+        const shownCards = [];
+
+        matched.forEach((card, idx) => {
+            const show = idx < visibleLimit;
+            card.hidden = !show;
+            if (show) shownCards.push(card);
+        });
+
+        const hiddenCount = Math.max(0, matched.length - visibleLimit);
+
+        if (portfolioStatus) {
+            const label = filterLabels[currentFilter] || 'PROYECTOS';
+            if (isCompactAll && hiddenCount > 0) {
+                portfolioStatus.textContent = `MOSTRANDO ${shownCards.length} DE ${matched.length} ${label}`;
+            } else {
+                portfolioStatus.textContent = `MOSTRANDO ${shownCards.length} ${label}`;
+            }
+        }
+
+        if (portfolioMoreWrap && portfolioMoreBtn && portfolioMoreText) {
+            const showToggle = isCompactAll && matched.length > MOBILE_PORTFOLIO_LIMIT;
+            portfolioMoreWrap.hidden = !showToggle;
+            portfolioMoreBtn.setAttribute('aria-expanded', String(portfolioExpanded));
+            portfolioMoreText.textContent = portfolioExpanded
+                ? 'Mostrar menos proyectos'
+                : `Ver más proyectos (+${hiddenCount})`;
+        }
+
+        if (animateCards && hasGSAP && !prefersReducedMotion) {
+            const targets = shownCards.slice(onlyAnimateFrom);
+            if (targets.length) {
+                gsap.fromTo(targets,
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.45, stagger: 0.045, ease: 'expo.out', overwrite: true, clearProps: 'transform,opacity' }
+                );
+            }
+        }
+
+        if (hasGSAP) ScrollTrigger.refresh();
+    };
+
     filterButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            const filter = button.dataset.filter || 'all';
+            currentFilter = button.dataset.filter || 'all';
 
             filterButtons.forEach((btn) => {
                 btn.classList.remove('active');
@@ -542,30 +606,38 @@
             button.classList.add('active');
             button.setAttribute('aria-pressed', 'true');
 
-            portfolioGrid?.classList.toggle('is-filtered', filter !== 'all');
-
-            const matched = [];
-            releaseCards.forEach((card) => {
-                const cats = (card.dataset.category || '').split(' ');
-                const show = filter === 'all' || cats.includes(filter);
-                card.hidden = !show;
-                if (show) matched.push(card);
-            });
-
-            if (portfolioStatus) {
-                const label = filterLabels[filter] || 'PROYECTOS';
-                portfolioStatus.textContent = `MOSTRANDO ${matched.length} ${label}`;
-            }
-
-            if (hasGSAP && !prefersReducedMotion && matched.length) {
-                gsap.fromTo(matched,
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 0.45, stagger: 0.045, ease: 'expo.out', overwrite: true }
-                );
-            }
-            if (hasGSAP) ScrollTrigger.refresh();
+            renderPortfolio(true, 0);
         });
     });
+
+    portfolioMoreBtn?.addEventListener('click', () => {
+        const wasExpanded = portfolioExpanded;
+        portfolioExpanded = !portfolioExpanded;
+        renderPortfolio(!wasExpanded, wasExpanded ? 0 : MOBILE_PORTFOLIO_LIMIT);
+
+        if (wasExpanded) {
+            portfolioMoreBtn.scrollIntoView({
+                block: 'center',
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
+        }
+    });
+
+    // Mobile-only Progressive Bio Disclosure (<details> stays open on desktop)
+    const aboutMore = document.getElementById('aboutMore');
+    const syncCompactDisclosures = (isCompact) => {
+        if (aboutMore) {
+            aboutMore.open = !isCompact;
+        }
+        renderPortfolio(false);
+    };
+
+    aboutMore?.addEventListener('toggle', () => {
+        if (hasGSAP) ScrollTrigger.refresh();
+    });
+
+    syncCompactDisclosures(compactMobileMQ.matches);
+    compactMobileMQ.addEventListener('change', (e) => syncCompactDisclosures(e.matches));
 
     // ----------------------------------------------------------------------
     // 8. Accessible FAQ Accordion

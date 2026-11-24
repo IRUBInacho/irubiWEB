@@ -36,7 +36,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css?v=10">
+    <link rel="stylesheet" href="estilo.css?v=11">
     <link rel="icon" type="image/png" href="imagenes/IRUBIBLACK.png">
 
     <!-- Structured Data (JSON-LD) -->
@@ -344,13 +344,22 @@
                                 es simple: cada tema tiene un ADN único, y mi trabajo es potenciarlo sin perder tu
                                 esencia.</p>
 
-                            <p>He trabajado con proyectos que van desde el pop y el indie hasta el urbano y la
-                                electrónica, pero mi verdadera especialidad no es un género: es <strong>la
-                                    adapatabilidad</strong>.</p>
+                            <details class="about__more" id="aboutMore" open>
+                                <summary class="about__more-toggle">
+                                    <span class="about__more-label about__more-label--closed">Leer más sobre mí</span>
+                                    <span class="about__more-label about__more-label--open">Mostrar menos</span>
+                                    <span class="about__more-icon" aria-hidden="true">+</span>
+                                </summary>
+                                <div class="about__more-body">
+                                    <p>He trabajado con proyectos que van desde el pop y el indie hasta el urbano y la
+                                        electrónica, pero mi verdadera especialidad no es un género: es <strong>la
+                                            adaptabilidad</strong>.</p>
 
-                            <p>Ya con un amplió catálogo de proyectos, puedo decir que mi pasaión es crear proyectos que
-                                puedan salir al mercado a competir en todos los sentidos,
-                                desde identidad sonora hasta precisión técnica.</p>
+                                    <p>Ya con un amplio catálogo de proyectos, puedo decir que mi pasión es crear
+                                        proyectos que puedan salir al mercado a competir en todos los sentidos,
+                                        desde identidad sonora hasta precisión técnica.</p>
+                                </div>
+                            </details>
                         </div>
 
                         <!--    <div class="about__metrics" data-reveal-up>
@@ -933,6 +942,14 @@
                     </article>
                 </div>
 
+                <div class="portfolio-more-wrap" id="portfolioMoreWrap">
+                    <button type="button" class="btn btn--outline portfolio-more-btn" id="portfolioMoreBtn"
+                        aria-expanded="false" aria-controls="portfolioGrid">
+                        <span class="btn__fill" aria-hidden="true"></span>
+                        <span class="btn__text" id="portfolioMoreText">Ver más proyectos (+6)</span>
+                    </button>
+                </div>
+
                 <div class="portfolio__footer-note" data-reveal-up>
                     <p>¿Quieres escuchar más muestras de audio en máxima resolución? <a href="#contact">Contáctame para
                             acceder a muestras privadas completas →</a></p>
@@ -1294,7 +1311,7 @@
     <script defer src="vendor/lenis.min.js"></script>
     <script defer src="vendor/gsap.min.js"></script>
     <script defer src="vendor/ScrollTrigger.min.js"></script>
-    <script defer src="app.js?v=10"></script>
+    <script defer src="app.js?v=11"></script>
 </body>
 
 </html>
