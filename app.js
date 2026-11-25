@@ -256,29 +256,40 @@
     if (hasGSAP && !prefersReducedMotion) {
         // A. Hero Entrance + Scroll-Scrubbed Visual Parallax & Scale
         const heroLines = document.querySelectorAll('.hero [data-kinetic-lines] .k-line__inner');
+        const heroMetaRow = document.querySelector('.hero__meta-row');
+        const heroBottomItems = document.querySelectorAll('.hero__bottom-deck > *');
         const heroVisualFrame = document.getElementById('heroVisualFrame');
         const heroVisualImg = document.getElementById('heroVisualImg');
 
-        const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-        heroTl
-            .from('.hero__meta-row', { opacity: 0, y: 18, duration: 0.8 })
-            .from(heroLines, {
-                yPercent: 118,
-                rotate: 2.2,
-                duration: 1.15,
-                stagger: 0.09
-            }, '-=0.55')
-            .from(heroVisualFrame, {
-                opacity: 0,
-                duration: 1.4,
-                ease: 'power2.out'
-            }, 0)
-            .from('.hero__bottom-deck > *', {
-                opacity: 0,
-                y: 26,
-                duration: 0.9,
-                stagger: 0.12
-            }, '-=0.6');
+        if (heroLines.length || heroMetaRow || heroBottomItems.length) {
+            const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+            if (heroMetaRow) {
+                heroTl.from(heroMetaRow, { opacity: 0, y: 18, duration: 0.8 });
+            }
+            if (heroLines.length) {
+                heroTl.from(heroLines, {
+                    yPercent: 118,
+                    rotate: 2.2,
+                    duration: 1.15,
+                    stagger: 0.09
+                }, heroMetaRow ? '-=0.55' : 0);
+            }
+            if (heroVisualFrame) {
+                heroTl.from(heroVisualFrame, {
+                    opacity: 0,
+                    duration: 1.4,
+                    ease: 'power2.out'
+                }, 0);
+            }
+            if (heroBottomItems.length) {
+                heroTl.from(heroBottomItems, {
+                    opacity: 0,
+                    y: 26,
+                    duration: 0.9,
+                    stagger: 0.12
+                }, '-=0.6');
+            }
+        }
 
         if (heroVisualImg) {
             gsap.fromTo(heroVisualImg,
@@ -475,34 +486,38 @@
         });
 
         // G. Portfolio Cards Stagger Reveal
-        gsap.from('.release-card', {
-            opacity: 0,
-            y: 42,
-            duration: 0.85,
-            stagger: 0.07,
-            ease: 'power3.out',
-            clearProps: 'transform,opacity',
-            scrollTrigger: {
-                trigger: '.portfolio-grid',
-                start: 'top 84%',
-                once: true
-            }
-        });
+        if (document.querySelector('.release-card') && document.querySelector('.portfolio-grid')) {
+            gsap.from('.release-card', {
+                opacity: 0,
+                y: 42,
+                duration: 0.85,
+                stagger: 0.07,
+                ease: 'power3.out',
+                clearProps: 'transform,opacity',
+                scrollTrigger: {
+                    trigger: '.portfolio-grid',
+                    start: 'top 84%',
+                    once: true
+                }
+            });
+        }
 
         // H. CTA Slab Background Parallax + Footer Monumental Wordmark Rise
-        gsap.fromTo('.cta-slab__bg',
-            { yPercent: -10 },
-            {
-                yPercent: 10,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.cta-slab',
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: true
+        if (document.querySelector('.cta-slab__bg') && document.querySelector('.cta-slab')) {
+            gsap.fromTo('.cta-slab__bg',
+                { yPercent: -10 },
+                {
+                    yPercent: 10,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.cta-slab',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
                 }
-            }
-        );
+            );
+        }
 
         const footerWordmark = document.querySelector('[data-footer-wordmark]');
         if (footerWordmark) {

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#07070B">
+    <title>IRUBI TECH | Ingeniería Informática, Software &amp; IA para la Industria Musical</title>
+    <meta name="description"
+        content="Tech World de Ignacio Rubí (IRUBI): ingeniería informática, software a medida, automatización e inteligencia operacional para la industria musical y eventos en vivo. Conoce SONARA Solutions y MIXBUS AI.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Open Graph & Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="IRUBI Tech World">
+    <meta property="og:title" content="IRUBI TECH | Software &amp; IA para la Industria Musical">
+    <meta property="og:description"
+        content="Ingeniería informática aplicada a la música y el entretenimiento: SONARA Solutions y MIXBUS Operational Intelligence.">
+    <meta property="og:image" content="imagenes/IRUBIBLACK.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IRUBI TECH | Software &amp; IA para la Industria Musical">
+    <meta name="twitter:description"
+        content="Software a medida, plataformas SaaS y sistemas operacionales con IA para la industria musical y eventos en vivo.">
+    <meta name="twitter:image" content="imagenes/IRUBIBLACK.png">
+
+    <script>document.documentElement.classList.add('js-ready');</script>
+
+    <!-- Editorial Typography: Syne (Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Telemetry) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css?v=19">
+    <link rel="icon" type="image/png" href="imagenes/IRUBIBLACK.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ignacio Rubí",
+        "alternateName": "IRUBI",
+        "jobTitle": "Ingeniero Informático y Productor Musical",
+        "description": "Desarrollo de software, automatización e inteligencia artificial aplicada a la industria musical y producción de eventos en vivo.",
+        "email": "irubimusic@gmail.com",
+        "sameAs": [
+            "https://sonarasolutions.vercel.app/#solutions",
+            "https://mixbus-demo.vercel.app/",
+            "https://www.linkedin.com/in/ignacio-rubi",
+            "https://www.instagram.com/irubimusic_/"
+        ]
+    }
+    </script>
+</head>
+
+<body class="tech-page">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <!-- Top VU Scroll Progress Bar -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Editorial Header -->
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <div class="header-brand-group">
+                <a href="index.html" class="brand" data-magnetic="0.18" aria-label="IRUBI — Volver al portal principal">
+                    <span class="brand__mark">IRUBI</span>
+                    <span class="brand__sub">TECH WORLD</span>
+                </a>
+
+                <nav class="world-switch" aria-label="Cambiar de universo">
+                    <a href="music.html" class="world-switch__item">Music</a>
+                    <a href="tech.html" class="world-switch__item is-active" aria-current="page">Tech</a>
+                </nav>
+            </div>
+
+            <button type="button" class="menu-toggle" id="mobileMenuBtn" aria-label="Abrir menú de navegación"
+                aria-expanded="false" aria-controls="navMenu">
+                <span class="menu-toggle__label" id="menuToggleLabel">MENÚ</span>
+                <span class="menu-toggle__bars" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+            <nav class="site-nav" aria-label="Navegación principal Tech World">
+                <ul id="navMenu">
+                    <li><a href="#tech-about"><span class="nav-idx">01</span>Perfil</a></li>
+                    <li><a href="#tech-projects"><span class="nav-idx">02</span>Productos</a></li>
+                    <li><a href="#tech-capabilities"><span class="nav-idx">03</span>Capacidades</a></li>
+                    <li class="nav-cta">
+                        <a href="#tech-contact" class="btn btn--volt btn--sm" data-magnetic="0.24">
+                            <span class="btn__fill" aria-hidden="true"></span>
+                            <span class="btn__text">Conversemos</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+    <main id="main-content" tabindex="-1">
+        <!-- ==================================================================
+             00 // HERO TECH — ARCHITECTURAL SYSTEMS MONOLITH
+             ================================================================== -->
+        <section class="hero hero--tech theme-dark" id="home">
+            <div class="hero-tech__bg" aria-hidden="true">
+                <div class="hero-tech__grid"></div>
+                <div class="hero-tech__slash"></div>
+            </div>
+            <div class="hero__grid-lines" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="container hero__layout">
+                <div class="hero__meta-row">
+                    <span class="eyebrow eyebrow--volt">[ INGENIERÍA INFORMÁTICA · SOFTWARE · IA ]</span>
+                    <span class="eyebrow eyebrow--mono">MUSIC &amp; LIVE EVENTS SYSTEMS — WORLDWIDE</span>
+                </div>
+
+                <div class="hero__stage">
+                    <div class="hero__headline-col">
+                        <h1 class="hero__title" data-kinetic-lines>
+                            <span class="k-line"><span class="k-line__inner">SOFTWARE</span></span>
+                            <span class="k-line"><span
+                                    class="k-line__inner k-line__inner--indent">DISEÑADO</span></span>
+                            <span class="k-line"><span
+                                    class="k-line__inner k-line__inner--volt">DESDE ADENTRO</span></span>
+                            <span class="k-line"><span class="k-line__inner">DE LA INDUSTRIA<span
+                                        class="volt-dot">.</span></span></span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="hero__bottom-deck">
+                    <p class="hero__lead" data-reveal-up>
+                        Construyo productos de software, automatización e inteligencia operacional para sellos,
+                        artistas, productoras y eventos en vivo. <strong>Ingeniería informática combinada con
+                            experiencia real en estudio y producción.</strong>
+                    </p>
+
+                    <div class="hero__actions" data-reveal-up>
+                        <a href="#tech-projects" class="btn btn--volt btn--lg" data-magnetic="0.28">
+                            <span class="btn__fill" aria-hidden="true"></span>
+                            <span class="btn__text">Ver proyectos [02]</span>
+                            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="#tech-contact" class="btn btn--outline btn--lg" data-magnetic="0.22">
+                            <span class="btn__fill" aria-hidden="true"></span>
+                            <span class="btn__text">Hablar de un proyecto</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             VELOCITY-REACTIVE DUAL KINETIC MARQUEE BAND
+             ================================================================== -->
+        <div class="marquee-band" aria-label="Especialidades tecnológicas">
+            <div class="marquee-band__controls">
+                <span class="marquee-band__tag">SYSTEM STREAM //</span>
+                <button type="button" class="marquee-pause-btn" id="marqueeToggleBtn">Pausar cinta ❚❚</button>
+            </div>
+
+            <div class="marquee-row marquee-row--volt" data-marquee-dir="1">
+                <div class="marquee-track">
+                    <span>SOFTWARE A MEDIDA</span><i aria-hidden="true">✦</i>
+                    <span>PLATAFORMAS SAAS B2B</span><i aria-hidden="true">✦</i>
+                    <span>INTELIGENCIA OPERACIONAL</span><i aria-hidden="true">✦</i>
+                    <span>AUTOMATIZACIÓN &amp; IA</span><i aria-hidden="true">✦</i>
+                    <span>MUSIC &amp; LIVE EVENTS TECH</span><i aria-hidden="true">✦</i>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <span>SOFTWARE A MEDIDA</span><i>✦</i>
+                    <span>PLATAFORMAS SAAS B2B</span><i>✦</i>
+                    <span>INTELIGENCIA OPERACIONAL</span><i>✦</i>
+                    <span>AUTOMATIZACIÓN &amp; IA</span><i>✦</i>
+                    <span>MUSIC &amp; LIVE EVENTS TECH</span><i>✦</i>
+                </div>
+            </div>
+
+            <div class="marquee-row marquee-row--violet" data-marquee-dir="-1" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>SONARA SOLUTIONS</span><i>//</i>
+                    <span>MIXBUS AI</span><i>//</i>
+                    <span>GESTIÓN DE RIDERS</span><i>//</i>
+                    <span>ANALÍTICA DE DATOS</span><i>//</i>
+                    <span>SISTEMAS PARA PRODUCTORAS</span><i>//</i>
+                    <span>SELLOS &amp; RECINTOS</span><i>//</i>
+                </div>
+                <div class="marquee-track">
+                    <span>SONARA SOLUTIONS</span><i>//</i>
+                    <span>MIXBUS AI</span><i>//</i>
+                    <span>GESTIÓN DE RIDERS</span><i>//</i>
+                    <span>ANALÍTICA DE DATOS</span><i>//</i>
+                    <span>SISTEMAS PARA PRODUCTORAS</span><i>//</i>
+                    <span>SELLOS &amp; RECINTOS</span><i>//</i>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================================
+             01 // PERFIL HÍBRIDO — EDITORIAL PAPER SLAB (#F2EFE9)
+             ================================================================== -->
+        <section class="about theme-paper section-pad" id="tech-about">
+            <div class="container">
+                <div class="section-kicker">
+                    <span class="section-kicker__num">[ 01 // PERFIL HÍBRIDO ]</span>
+                    <span class="section-kicker__line" aria-hidden="true"></span>
+                    <span class="section-kicker__meta">INGENIERÍA × INDUSTRIA MUSICAL</span>
+                </div>
+
+                <h2 class="display-heading display-heading--paper" data-kinetic-lines>
+                    <span class="k-line"><span class="k-line__inner">CÓDIGO CON</span></span>
+                    <span class="k-line"><span class="k-line__inner k-line__inner--indent">CONTEXTO REAL DE
+                            INDUSTRIA<span class="violet-dot">.</span></span></span>
+                </h2>
+
+                <div class="about__editorial-grid">
+                    <div class="about__media-col">
+                        <div class="about__sticky-card">
+                            <div class="tech-spec-card" data-reveal-up>
+                                <div class="tech-spec-card__head">
+                                    <span>PROFILE // DUAL-CORE</span>
+                                    <span class="tech-spec-card__status">ACTIVO</span>
+                                </div>
+                                <dl class="tech-spec-list">
+                                    <div class="tech-spec-row">
+                                        <dt>DISCIPLINA 01</dt>
+                                        <dd>Ingeniería Informática &amp; Arquitectura de Software</dd>
+                                    </div>
+                                    <div class="tech-spec-row">
+                                        <dt>DISCIPLINA 02</dt>
+                                        <dd>Producción Musical, Mezcla &amp; Mastering</dd>
+                                    </div>
+                                    <div class="tech-spec-row">
+                                        <dt>FOCO PRODUCTO</dt>
+                                        <dd>SaaS, Automatización, IA Aplicada &amp; Operaciones en Vivo</dd>
+                                    </div>
+                                    <div class="tech-spec-row">
+                                        <dt>ECOSISTEMA</dt>
+                                        <dd>SONARA Solutions · MIXBUS Platform</dd>
+                                    </div>
+                                </dl>
+                                <div class="tech-spec-card__foot">
+                                    <span>IGNACIO RUBÍ [IRUBI]</span>
+                                    <span>SANTIAGO, CL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__copy-col">
+                        <p class="about__manifesto" data-scrub-words>
+                            Gran parte del software para la industria musical falla porque lo diseñan equipos que nunca
+                            han estado dentro de un estudio ni en la operación de un show.
+                        </p>
+
+                        <div class="about__prose" data-reveal-up>
+                            <h3 class="about__subhead">Ingeniero informático y hombre de estudio</h3>
+                            <p>Mi trabajo como <strong>Ingeniero Informático</strong> nace directamente de los cuellos
+                                de botella reales que veo todos los días en la música y el entretenimiento: procesos
+                                manuales en planillas interminables, riders técnicos desordenados, comunicación
+                                fragmentada entre producción y proveedores, y datos sin explotar.</p>
+                            <p>Por eso desarrollo soluciones y productos propios que hablan el idioma exacto de
+                                <strong>productoras, sellos, recintos, promotores y creadores</strong> — reduciendo
+                                fricción operativa con software moderno, automatización e inteligencia artificial.</p>
+                        </div>
+
+                        <div class="about__cta-wrap tech-bridge-actions" data-reveal-up>
+                            <a href="#tech-projects" class="btn btn--ink btn--lg" data-magnetic="0.24">
+                                <span class="btn__fill" aria-hidden="true"></span>
+                                <span class="btn__text">Explorar productos</span>
+                                <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="music.html" class="tech-inline-link">¿Buscas producción, mezcla o mastering? Ir a
+                                Music World →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             02 // PRODUCTOS & SOLUCIONES — SONARA SOLUTIONS & MIXBUS
+             ================================================================== -->
+        <section class="tech-projects theme-dark section-pad" id="tech-projects">
+            <div class="container">
+                <div class="section-kicker">
+                    <span class="section-kicker__num">[ 02 // PRODUCTOS &amp; SOLUCIONES ]</span>
+                    <span class="section-kicker__line" aria-hidden="true"></span>
+                    <span class="section-kicker__meta">PROYECTOS EN PRODUCCIÓN Y DEMO</span>
+                </div>
+
+                <div class="services__header-split">
+                    <h2 class="display-heading" data-kinetic-lines>
+                        <span class="k-line"><span class="k-line__inner">SOLUCIONES</span></span>
+                        <span class="k-line"><span class="k-line__inner k-line__inner--volt">ACTIVAS<span
+                                    class="volt-dot">.</span></span></span>
+                    </h2>
+                    <p class="services__intro" data-reveal-up>
+                        Mis proyectos y productos de software enfocados en profesionalizar la operación, analítica y
+                        tecnología de la industria musical y de eventos.
+                    </p>
+                </div>
+
+                <div class="tech-showcase-grid">
+                    <!-- PROJECT 01: SONARA SOLUTIONS -->
+                    <article class="tech-product-card tech-product-card--sonara" data-reveal-up>
+                        <div class="tech-product-card__visual">
+                            <div class="tech-window-bar">
+                                <span class="tech-window-bar__id">01 // SONARA SOLUTIONS</span>
+                                <span class="tech-window-bar__url">sonarasolutions.vercel.app/#solutions</span>
+                            </div>
+
+                            <div class="tech-schematic tech-schematic--sonara" aria-hidden="true">
+                                <div class="tech-schematic__header">
+                                    <span class="tech-schematic__brand">SONARA<span>.</span></span>
+                                    <span class="tech-schematic__pill">SOFTWARE &amp; AI</span>
+                                </div>
+                                <div class="tech-schematic__modules">
+                                    <div class="tech-mod">
+                                        <strong>CRM &amp; Sellos</strong>
+                                        <span>Regalías · Lanzamientos</span>
+                                    </div>
+                                    <div class="tech-mod">
+                                        <strong>Recintos &amp; Live</strong>
+                                        <span>Ticketing · Capacidad</span>
+                                    </div>
+                                    <div class="tech-mod">
+                                        <strong>IA &amp; Analítica</strong>
+                                        <span>Metadatos · BigQuery</span>
+                                    </div>
+                                    <div class="tech-mod">
+                                        <strong>Audio &amp; ERPs</strong>
+                                        <span>VST/AU · Operaciones</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-product-card__body">
+                            <div class="tech-product-card__meta">
+                                <span class="tech-product-card__tag">DEEP TECH · SOFTWARE &amp; IA</span>
+                                <span class="tech-product-card__live">ONLINE</span>
+                            </div>
+
+                            <h3>SONARA Solutions</h3>
+                            <p class="tech-product-card__subtitle">Software, automatización e IA para música y
+                                entretenimiento.</p>
+                            <p class="tech-product-card__desc">
+                                Ecosistema de ingeniería enfocado en construir software a medida, plataformas SaaS B2B,
+                                herramientas de IA, analítica de streaming, plugins de audio (VST/AU) y ERPs internos
+                                para sellos discográficos, artistas, recintos, promotores y productoras.
+                            </p>
+
+                            <ul class="tech-pill-list" aria-label="Soluciones de SONARA">
+                                <li>Software a Medida</li>
+                                <li>Plataformas SaaS</li>
+                                <li>Herramientas de IA</li>
+                                <li>Analítica &amp; Datos</li>
+                                <li>Plugins VST/AU</li>
+                                <li>Operaciones de Recintos</li>
+                            </ul>
+
+                            <div class="tech-product-card__actions">
+                                <a href="https://sonarasolutions.vercel.app/#solutions" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--volt btn--lg" data-magnetic="0.22">
+                                    <span class="btn__fill" aria-hidden="true"></span>
+                                    <span class="btn__text">Explorar SONARA Solutions</span>
+                                    <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M7 17L17 7"></path>
+                                        <path d="M7 7h10v10"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 02: MIXBUS -->
+                    <article class="tech-product-card tech-product-card--mixbus" data-reveal-up>
+                        <div class="tech-product-card__visual">
+                            <div class="tech-window-bar">
+                                <span class="tech-window-bar__id">02 // MIXBUS PLATFORM</span>
+                                <span class="tech-window-bar__url">mixbus-demo.vercel.app</span>
+                            </div>
+
+                            <div class="tech-schematic tech-schematic--mixbus" aria-hidden="true">
+                                <div class="tech-schematic__header">
+                                    <span class="tech-schematic__brand">MIXBUS<span>_AI</span></span>
+                                    <span class="tech-schematic__pill tech-schematic__pill--volt">LIVE DEMO</span>
+                                </div>
+                                <div class="tech-schematic__pipeline">
+                                    <div class="tech-pipe-row">
+                                        <span class="tech-pipe-badge">RIDER .CSV/.TXT</span>
+                                        <span class="tech-pipe-text">Clasificación automática por área</span>
+                                    </div>
+                                    <div class="tech-pipe-row">
+                                        <span class="tech-pipe-badge tech-pipe-badge--violet">MULTI-ROL</span>
+                                        <span class="tech-pipe-text">Admin · Productor · Proveedores</span>
+                                    </div>
+                                    <div class="tech-pipe-row">
+                                        <span class="tech-pipe-badge tech-pipe-badge--amber">PLAN 48H AI</span>
+                                        <span class="tech-pipe-text">Alertas operativas + evidencia</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-product-card__body">
+                            <div class="tech-product-card__meta">
+                                <span class="tech-product-card__tag">LIVE EVENTS · OPERATIONAL AI</span>
+                                <span class="tech-product-card__live tech-product-card__live--demo">DEMO INTERACTIVA</span>
+                            </div>
+
+                            <h3>MIXBUS</h3>
+                            <p class="tech-product-card__subtitle">Plataforma de inteligencia operacional para eventos
+                                en vivo.</p>
+                            <p class="tech-product-card__desc">
+                                Orquesta la operación completa de conciertos, festivales y eventos con
+                                <strong>MIXBUS AI</strong>. Coordina administradores, productores y proveedores en
+                                tiempo real, importa riders técnicos en <code>.TXT</code> o <code>.CSV</code>
+                                clasificándolos automáticamente, exige confirmaciones con evidencia y genera planes
+                                operativos de 48 horas.
+                            </p>
+
+                            <ul class="tech-pill-list" aria-label="Capacidades de MIXBUS">
+                                <li>MIXBUS AI (Plan 48h)</li>
+                                <li>Importador de Riders</li>
+                                <li>Roles Admin / Prod / Prov</li>
+                                <li>Alertas en Tiempo Real</li>
+                                <li>Confirmación con Evidencia</li>
+                                <li>Live Production Ops</li>
+                            </ul>
+
+                            <div class="tech-product-card__actions">
+                                <a href="https://mixbus-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn--primary btn--lg" data-magnetic="0.22">
+                                    <span class="btn__fill" aria-hidden="true"></span>
+                                    <span class="btn__text">Probar Demo de MIXBUS</span>
+                                    <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M7 17L17 7"></path>
+                                        <path d="M7 7h10v10"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             03 // CAPACIDADES & ARQUITECTURA — EDITORIAL CARD GRID (INDIGO)
+             ================================================================== -->
+        <section class="services theme-indigo section-pad" id="tech-capabilities">
+            <div class="container">
+                <div class="section-kicker">
+                    <span class="section-kicker__num">[ 03 // CAPACIDADES TÉCNICAS ]</span>
+                    <span class="section-kicker__line" aria-hidden="true"></span>
+                    <span class="section-kicker__meta">DE LA IDEA AL SISTEMA EN PRODUCCIÓN</span>
+                </div>
+
+                <div class="services__header-split">
+                    <h2 class="display-heading" data-kinetic-lines>
+                        <span class="k-line"><span class="k-line__inner">QUÉ CONSTRUYO</span></span>
+                        <span class="k-line"><span class="k-line__inner k-line__inner--accent">EN TECH WORLD<span
+                                    class="volt-dot">.</span></span></span>
+                    </h2>
+                    <p class="services__intro" data-reveal-up>
+                        Desarrollo productos digitales y arquitecturas pensadas para operar bajo la presión real de la
+                        música, el entretenimiento y los negocios digitales.
+                    </p>
+                </div>
+
+                <div class="services__grid" data-mobile-carousel="services"
+                    data-carousel-label="Capacidades de ingeniería informática y Music Tech">
+                    <div class="mobile-carousel-head">
+                        <span class="mobile-carousel-hint" aria-hidden="true">DESLIZA →</span>
+                        <div class="mobile-carousel-controls">
+                            <button type="button" class="mobile-carousel-btn" data-direction="previous"
+                                aria-label="Capacidad anterior">
+                                <span aria-hidden="true">←</span>
+                            </button>
+                            <button type="button" class="mobile-carousel-btn" data-direction="next"
+                                aria-label="Siguiente capacidad">
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="services__chapters" id="servicesTrack" data-carousel-track>
+                        <article class="service-chapter" data-service-step="0" data-service-num="01"
+                            data-slide-label="1 de 3" data-marker-name="Ir a capacidad 1: Software y Plataformas SaaS">
+                            <div class="service-chapter__head">
+                                <span class="service-chapter__idx">01</span>
+                                <span class="service-chapter__tag">PRODUCTO &amp; ESCALA</span>
+                            </div>
+                            <h3>Software &amp; Plataformas SaaS</h3>
+                            <p>Diseño e ingeniería de aplicaciones web full-stack, paneles de gestión multi-rol y
+                                herramientas internas diseñadas para reemplazar planillas y procesos frágiles.</p>
+                            <ul class="service-chapter__list">
+                                <li>Aplicaciones web modernas y responsivas</li>
+                                <li>Sistemas multi-rol y permisos en tiempo real</li>
+                                <li>Dashboards de gestión para sellos y productoras</li>
+                                <li>Arquitecturas listas para crecer</li>
+                            </ul>
+                        </article>
+
+                        <article class="service-chapter" data-service-step="1" data-service-num="02"
+                            data-slide-label="2 de 3"
+                            data-marker-name="Ir a capacidad 2: Automatización e Inteligencia Artificial">
+                            <div class="service-chapter__head">
+                                <span class="service-chapter__idx">02</span>
+                                <span class="service-chapter__tag">EFICIENCIA &amp; DATOS</span>
+                            </div>
+                            <h3>Automatización &amp; IA Aplicada</h3>
+                            <p>Integración práctica de inteligencia artificial para clasificar documentos, automatizar
+                                seguimiento operativo y convertir información dispersa en decisiones claras.</p>
+                            <ul class="service-chapter__list">
+                                <li>Asistentes y copilotos operativos con IA</li>
+                                <li>Ingesta y clasificación de riders y documentos</li>
+                                <li>Alertas inteligentes y flujos automatizados</li>
+                                <li>Analítica de catálogo, audiencias y operación</li>
+                            </ul>
+                        </article>
+
+                        <article class="service-chapter" data-service-step="2" data-service-num="03"
+                            data-slide-label="3 de 3"
+                            data-marker-name="Ir a capacidad 3: Consultoría Music & Live Tech">
+                            <div class="service-chapter__head">
+                                <span class="service-chapter__idx">03</span>
+                                <span class="service-chapter__tag">ESTRATEGIA &amp; AUDIO</span>
+                            </div>
+                            <h3>Consultoría Music &amp; Live Tech</h3>
+                            <p>Acompañamiento técnico y producto para productoras de eventos, estudios, startups
+                                musicales y empresas que quieren digitalizar su operación sin perder el pulso creativo.
+                            </p>
+                            <ul class="service-chapter__list">
+                                <li>Diagnóstico de flujos operativos y digitales</li>
+                                <li>Prototipado rápido y MVPs validables</li>
+                                <li>Integración de ecosistemas de datos y APIs</li>
+                                <li>Puente directo entre equipo técnico y creativo</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <p class="visually-hidden" role="status" aria-live="polite" data-carousel-status></p>
+                    <nav class="mobile-carousel-markers" aria-label="Seleccionar capacidad" data-carousel-markers></nav>
+                </div>
+
+                <div class="remote-banner remote-banner--split" data-reveal-up>
+                    <div class="remote-banner__main">
+                        <span class="remote-banner__badge">MUSIC WORLD</span>
+                        <p><strong>¿Llegaste buscando producción musical, mezcla o mastering?</strong> Mi estudio
+                            musical sigue activo con su propio espacio dedicado.</p>
+                    </div>
+                    <a href="music.html" class="btn btn--outline btn--sm">
+                        <span class="btn__fill" aria-hidden="true"></span>
+                        <span class="btn__text">Ir a Music World →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             04 // CONTACTO TECH — CANALES DIRECTOS
+             ================================================================== -->
+        <section class="contact theme-dark section-pad" id="tech-contact">
+            <div class="container">
+                <div class="section-kicker">
+                    <span class="section-kicker__num">[ 04 // CONTACTO DIRECTO ]</span>
+                    <span class="section-kicker__line" aria-hidden="true"></span>
+                    <span class="section-kicker__meta">CANALES DIRECTOS</span>
+                </div>
+
+                <div class="tech-contact-grid">
+                    <div class="tech-contact-intro">
+                        <h2 class="display-heading" data-kinetic-lines>
+                            <span class="k-line"><span class="k-line__inner">CONSTRUYAMOS</span></span>
+                            <span class="k-line"><span class="k-line__inner k-line__inner--volt">TU SOLUCIÓN<span
+                                        class="volt-dot">.</span></span></span>
+                        </h2>
+                        <p class="tech-contact-lead" data-reveal-up>
+                            ¿Quieres explorar <strong>SONARA Solutions</strong>, probar una implementación de
+                            <strong>MIXBUS</strong> o desarrollar una herramienta a medida para tu equipo? Escríbeme
+                            directo por correo, WhatsApp o LinkedIn.
+                        </p>
+
+                        <div class="tech-contact-actions" data-reveal-up>
+                            <a href="mailto:irubimusic@gmail.com?subject=Consulta%20Tech%20World%20%E2%80%94%20IRUBI"
+                                class="btn btn--volt" data-magnetic="0.22">
+                                <span class="btn__fill" aria-hidden="true"></span>
+                                <span class="btn__text">Escribir por email</span>
+                                <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M7 17L17 7"></path>
+                                    <path d="M7 7h10v10"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ignacio-rubi" target="_blank" rel="noopener noreferrer"
+                                class="btn btn--outline" data-magnetic="0.22">
+                                <span class="btn__fill" aria-hidden="true"></span>
+                                <span class="btn__text">LinkedIn</span>
+                                <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M7 17L17 7"></path>
+                                    <path d="M7 7h10v10"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tech-contact-panel" data-reveal-up>
+                        <div class="tech-contact-panel__bar" aria-hidden="true">
+                            <span>DIRECT CHANNELS // TECH</span>
+                            <span class="tech-contact-panel__status">ACTIVO</span>
+                        </div>
+
+                        <dl class="patchbay-list tech-patchbay-list">
+                            <div class="patchbay-row">
+                                <dt>EMAIL DIRECTO</dt>
+                                <dd><a href="mailto:irubimusic@gmail.com" class="patchbay-link">irubimusic@gmail.com</a>
+                                </dd>
+                            </div>
+                            <div class="patchbay-row">
+                                <dt>TELÉFONO / WHATSAPP</dt>
+                                <dd><a href="tel:+56986314114" class="patchbay-link">+569&nbsp;86314114</a></dd>
+                            </div>
+                            <div class="patchbay-row">
+                                <dt>ENLACES DIRECTOS</dt>
+                                <dd class="tech-patchbay-links">
+                                    <a href="https://sonarasolutions.vercel.app/#solutions" target="_blank"
+                                        rel="noopener noreferrer" class="patchbay-link">SONARA Solutions ↗</a>
+                                    <a href="https://mixbus-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                        class="patchbay-link">MIXBUS Demo ↗</a>
+                                </dd>
+                            </div>
+                            <div class="patchbay-row">
+                                <dt>BASE &amp; ALCANCE</dt>
+                                <dd>Proyectos remotos y consultoría global.<br>Base: Santiago de Chile.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================================================================
+         MONUMENTAL EDITORIAL FOOTER
+         ================================================================== -->
+    <footer class="site-footer theme-dark">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__statement">
+                    <span class="eyebrow eyebrow--mono">IRUBI TECH ARCHITECTURE</span>
+                    <p>Ingeniería informática, software a medida, automatización e inteligencia operacional diseñados
+                        desde adentro de la industria musical y de eventos en vivo.</p>
+                </div>
+
+                <div class="footer__nav-col">
+                    <h4>Ecosistema</h4>
+                    <ul>
+                        <li><a href="index.html">Portal Principal</a></li>
+                        <li><a href="music.html">Music World</a></li>
+                        <li><a href="https://sonarasolutions.vercel.app/#solutions" target="_blank"
+                                rel="noopener noreferrer">SONARA Solutions ↗</a></li>
+                        <li><a href="https://mixbus-demo.vercel.app/" target="_blank" rel="noopener noreferrer">MIXBUS
+                                Demo ↗</a></li>
+                        <li><a href="#tech-contact">Contacto Tech</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__social-col">
+                    <h4>Conecta</h4>
+                    <div class="footer__socials">
+                        <a href="https://www.linkedin.com/in/ignacio-rubi" target="_blank" rel="noopener noreferrer"
+                            class="social-pill" data-magnetic="0.22" aria-label="LinkedIn de Ignacio Rubí">
+                            <span>LinkedIn</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a href="https://www.instagram.com/irubimusic_/" target="_blank" rel="noopener noreferrer"
+                            class="social-pill" data-magnetic="0.22" aria-label="Instagram de IRUBI">
+                            <span>Instagram</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                    <p class="footer__social-note">Ingeniería de software &amp; música desde Santiago de Chile.</p>
+                </div>
+            </div>
+
+            <div class="footer__wordmark-wrap" aria-hidden="true">
+                <div class="footer__wordmark" data-footer-wordmark>IRUBI</div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 IRUBI — Ignacio Rubí. Todos los derechos reservados.</p>
+                <p>Music World &amp; Tech World en un mismo ecosistema.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Real Animation Engine: Lenis + GSAP + ScrollTrigger (Local Vendor Bundle, Zero CDN Block) -->
+    <script defer src="vendor/lenis.min.js"></script>
+    <script defer src="vendor/gsap.min.js"></script>
+    <script defer src="vendor/ScrollTrigger.min.js"></script>
+    <script defer src="app.js?v=14"></script>
+</body>
+
+</html>
