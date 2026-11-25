@@ -2076,18 +2076,37 @@ textarea.form-control {
         --cut-md: 18px;
     }
 
+    .site-header {
+        height: auto;
+        min-height: calc(var(--header-h) + env(safe-area-inset-top));
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .brand {
+        min-height: 44px;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 100svh;
+        min-height: 100dvh;
+    }
+
     .menu-toggle {
         display: inline-flex;
     }
 
     .site-nav {
         position: fixed;
-        top: var(--header-h);
+        top: calc(var(--header-h) + env(safe-area-inset-top));
         left: 0;
         right: 0;
+        max-height: calc(100dvh - var(--header-h) - env(safe-area-inset-top));
+        overflow-y: auto;
+        overscroll-behavior: contain;
         background: rgba(10, 10, 16, 0.98);
         border-bottom: 1px solid var(--line-dark-strong);
-        padding: 20px var(--gutter) 28px;
+        padding: 20px var(--gutter) max(28px, env(safe-area-inset-bottom));
         transform: translate3d(0, -16px, 0);
         opacity: 0;
         visibility: hidden;
@@ -2207,8 +2226,8 @@ textarea.form-control {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 40px;
-        min-height: 40px;
+        min-width: 44px;
+        min-height: 44px;
         padding: 0;
         background: rgba(246, 245, 242, 0.06);
         border: 1px solid rgba(246, 245, 242, 0.42);
@@ -2252,9 +2271,9 @@ textarea.form-control {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 28px;
-        min-height: 28px;
-        padding: 12px 4px;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 12px 6px;
         background: transparent;
         border: 0;
         cursor: pointer;
@@ -2517,9 +2536,9 @@ textarea.form-control {
     }
 
     .marquee-pause-btn {
-        font-size: 0.6rem;
-        padding: 3px 9px;
-        min-height: 26px;
+        font-size: 0.64rem;
+        padding: 8px 12px;
+        min-height: 44px;
     }
 
     .marquee-row {
@@ -2645,8 +2664,10 @@ textarea.form-control {
     }
 
     .service-chapter h3 {
-        font-size: 1.38rem;
+        font-size: clamp(1.18rem, 4.8vw, 1.38rem);
         margin-bottom: 10px;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .service-chapter p {
@@ -2810,8 +2831,9 @@ textarea.form-control {
     }
 
     .cta-slab__title {
-        font-size: clamp(1.45rem, 5.8vw, 2rem);
-        line-height: 1.04;
+        font-size: clamp(1.22rem, 5.1vw, 1.95rem);
+        line-height: 1.06;
+        overflow-wrap: break-word;
     }
 
     .cta-slab__copy {
@@ -3874,9 +3896,27 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 
+    .world-switch {
+        padding: 2px;
+    }
+
     .world-switch__item {
-        padding: 4px 9px;
-        font-size: 0.64rem;
+        min-height: 44px;
+        padding: 0 10px;
+        font-size: 0.66rem;
+    }
+
+    .marquee-pause-btn {
+        min-height: 44px;
+        padding: 8px 14px;
+    }
+
+    .patchbay-link,
+    .tech-inline-link,
+    .footer__nav-col a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
     }
 }
 
@@ -3994,8 +4034,8 @@ textarea.form-control {
     }
 
     .world-switch__item {
-        min-height: 28px;
-        padding: 3px 8px;
+        min-height: 44px;
+        padding: 0 9px;
         font-size: 0.62rem;
         letter-spacing: 0.06em;
     }
@@ -4158,5 +4198,34 @@ textarea.form-control {
 
     .tech-contact-panel {
         padding: 22px 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .portal-pane__title {
+        font-size: clamp(1.32rem, 5.8vw, 1.8rem);
+    }
+
+    .header-inner {
+        gap: 8px;
+    }
+
+    .header-brand-group {
+        gap: 8px;
+    }
+
+    .brand__mark {
+        font-size: 1.2rem;
+    }
+
+    .world-switch__item {
+        padding: 0 7px;
+        font-size: 0.58rem;
+    }
+
+    .menu-toggle {
+        padding: 6px 9px;
+        gap: 6px;
+        font-size: 0.64rem;
     }
 }
