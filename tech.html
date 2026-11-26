@@ -32,7 +32,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css?v=22">
+    <link rel="stylesheet" href="estilo.css?v=23">
     <link rel="icon" type="image/png" href="imagenes/IRUBIBLACK.png">
 
     <!-- Structured Data (JSON-LD) -->
@@ -227,46 +227,15 @@
                             INDUSTRIA<span class="violet-dot">.</span></span></span>
                 </h2>
 
-                <div class="about__editorial-grid">
-                    <div class="about__media-col">
-                        <div class="about__sticky-card">
-                            <div class="tech-spec-card" data-reveal-up>
-                                <div class="tech-spec-card__head">
-                                    <span>PROFILE // DUAL-CORE</span>
-                                    <span class="tech-spec-card__status">ACTIVO</span>
-                                </div>
-                                <dl class="tech-spec-list">
-                                    <div class="tech-spec-row">
-                                        <dt>DISCIPLINA 01</dt>
-                                        <dd>Ingeniería Informática &amp; Arquitectura de Software</dd>
-                                    </div>
-                                    <div class="tech-spec-row">
-                                        <dt>DISCIPLINA 02</dt>
-                                        <dd>Producción Musical, Mezcla &amp; Mastering</dd>
-                                    </div>
-                                    <div class="tech-spec-row">
-                                        <dt>FOCO PRODUCTO</dt>
-                                        <dd>SaaS, Automatización, IA Aplicada &amp; Operaciones en Vivo</dd>
-                                    </div>
-                                    <div class="tech-spec-row">
-                                        <dt>ECOSISTEMA</dt>
-                                        <dd>SONARA Solutions · MIXBUS Platform</dd>
-                                    </div>
-                                </dl>
-                                <div class="tech-spec-card__foot">
-                                    <span>IGNACIO RUBÍ [IRUBI]</span>
-                                    <span>SANTIAGO, CL</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="tech-about-editorial">
+                    <div class="tech-about-editorial__lead">
+                        <p class="about__manifesto" data-scrub-words>
+                            Soluciones tecnológicas y software construidos desde un conocimiento profundo de la
+                            industria musical y del entretenimiento.
+                        </p>
                     </div>
 
                     <div class="about__copy-col">
-                        <p class="about__manifesto" data-scrub-words>
-                            Gran parte del software para la industria musical falla porque lo diseñan equipos que nunca
-                            han estado dentro de un estudio ni en la operación de un show.
-                        </p>
-
                         <div class="about__prose" data-reveal-up>
                             <h3 class="about__subhead">Ingeniero informático y hombre de estudio</h3>
                             <p>Mi trabajo como <strong>Ingeniero Informático</strong> nace directamente de los cuellos
@@ -323,36 +292,9 @@
                 <div class="tech-showcase-grid">
                     <!-- PROJECT 01: SONARA SOLUTIONS -->
                     <article class="tech-product-card tech-product-card--sonara" data-reveal-up>
-                        <div class="tech-product-card__visual">
-                            <div class="tech-window-bar">
-                                <span class="tech-window-bar__id">01 // SONARA SOLUTIONS</span>
-                                <span class="tech-window-bar__url">sonarasolutions.vercel.app/#solutions</span>
-                            </div>
-
-                            <div class="tech-schematic tech-schematic--sonara" aria-hidden="true">
-                                <div class="tech-schematic__header">
-                                    <span class="tech-schematic__brand">SONARA<span>.</span></span>
-                                    <span class="tech-schematic__pill">SOFTWARE &amp; AI</span>
-                                </div>
-                                <div class="tech-schematic__modules">
-                                    <div class="tech-mod">
-                                        <strong>CRM &amp; Sellos</strong>
-                                        <span>Regalías · Lanzamientos</span>
-                                    </div>
-                                    <div class="tech-mod">
-                                        <strong>Recintos &amp; Live</strong>
-                                        <span>Ticketing · Capacidad</span>
-                                    </div>
-                                    <div class="tech-mod">
-                                        <strong>IA &amp; Analítica</strong>
-                                        <span>Metadatos · BigQuery</span>
-                                    </div>
-                                    <div class="tech-mod">
-                                        <strong>Audio &amp; ERPs</strong>
-                                        <span>VST/AU · Operaciones</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="tech-window-bar">
+                            <span class="tech-window-bar__id tech-window-bar__id--sonara">01 // SONARA SOLUTIONS</span>
+                            <span class="tech-window-bar__url">sonarasolutions.vercel.app/#solutions</span>
                         </div>
 
                         <div class="tech-product-card__body">
@@ -361,7 +303,7 @@
                                 <span class="tech-product-card__live">ONLINE</span>
                             </div>
 
-                            <h3>SONARA Solutions</h3>
+                            <h3 class="tech-product-card__title--sonara">SONARA Solutions</h3>
                             <p class="tech-product-card__subtitle">Software, automatización e IA para música y
                                 entretenimiento.</p>
                             <p class="tech-product-card__desc">
@@ -397,32 +339,9 @@
 
                     <!-- PROJECT 02: MIXBUS -->
                     <article class="tech-product-card tech-product-card--mixbus" data-reveal-up>
-                        <div class="tech-product-card__visual">
-                            <div class="tech-window-bar">
-                                <span class="tech-window-bar__id">02 // MIXBUS PLATFORM</span>
-                                <span class="tech-window-bar__url">mixbus-demo.vercel.app</span>
-                            </div>
-
-                            <div class="tech-schematic tech-schematic--mixbus" aria-hidden="true">
-                                <div class="tech-schematic__header">
-                                    <span class="tech-schematic__brand">MIXBUS<span>_AI</span></span>
-                                    <span class="tech-schematic__pill tech-schematic__pill--volt">LIVE DEMO</span>
-                                </div>
-                                <div class="tech-schematic__pipeline">
-                                    <div class="tech-pipe-row">
-                                        <span class="tech-pipe-badge">RIDER .CSV/.TXT</span>
-                                        <span class="tech-pipe-text">Clasificación automática por área</span>
-                                    </div>
-                                    <div class="tech-pipe-row">
-                                        <span class="tech-pipe-badge tech-pipe-badge--violet">MULTI-ROL</span>
-                                        <span class="tech-pipe-text">Admin · Productor · Proveedores</span>
-                                    </div>
-                                    <div class="tech-pipe-row">
-                                        <span class="tech-pipe-badge tech-pipe-badge--amber">PLAN 48H AI</span>
-                                        <span class="tech-pipe-text">Alertas operativas + evidencia</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="tech-window-bar">
+                            <span class="tech-window-bar__id tech-window-bar__id--mixbus">02 // MIXBUS PLATFORM</span>
+                            <span class="tech-window-bar__url">mixbus-demo.vercel.app</span>
                         </div>
 
                         <div class="tech-product-card__body">
@@ -431,7 +350,7 @@
                                 <span class="tech-product-card__live tech-product-card__live--demo">DEMO INTERACTIVA</span>
                             </div>
 
-                            <h3>MIXBUS</h3>
+                            <h3 class="tech-product-card__title--mixbus">MIXBUS</h3>
                             <p class="tech-product-card__subtitle">Plataforma de inteligencia operacional para eventos
                                 en vivo.</p>
                             <p class="tech-product-card__desc">
@@ -481,16 +400,12 @@
                     <span class="section-kicker__meta">DE LA IDEA AL SISTEMA EN PRODUCCIÓN</span>
                 </div>
 
-                <div class="services__header-split">
+                <div class="services__header-single">
                     <h2 class="display-heading" data-kinetic-lines>
                         <span class="k-line"><span class="k-line__inner">QUÉ CONSTRUYO</span></span>
                         <span class="k-line"><span class="k-line__inner k-line__inner--accent">EN TECH WORLD<span
                                     class="volt-dot">.</span></span></span>
                     </h2>
-                    <p class="services__intro" data-reveal-up>
-                        Desarrollo productos digitales y arquitecturas pensadas para operar bajo la presión real de la
-                        música, el entretenimiento y los negocios digitales.
-                    </p>
                 </div>
 
                 <div class="services__grid" data-mobile-carousel="services"
